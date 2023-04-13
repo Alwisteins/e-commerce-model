@@ -26,7 +26,3 @@ export const Wishlists = mongoose.model("Wishlists", wishlistSchema);
 export const Checkouts = mongoose.model("Checkouts", checkoutSchema);
 export const Shippings = mongoose.model("Shippings", shippingSchema);
 export const Topup = mongoose.model("Topup", topupSchema);
-
-//aktivasi server db
-import { init } from "./connect";
-init();
