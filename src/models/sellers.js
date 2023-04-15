@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
-import { Schema } from "mongoose";
-import { Users } from "../models";
+import mongoose, { Schema } from "mongoose";
 
-//schema untuk validasi data sellers
+// schema untuk validasi data sellers
 export const sellerSchema = new Schema({
   seller_id: {
     type: mongoose.ObjectId,

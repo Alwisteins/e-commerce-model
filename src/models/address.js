@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import { Users } from "../models";
 
 export const addressSchema = new Schema({
   address_id: {

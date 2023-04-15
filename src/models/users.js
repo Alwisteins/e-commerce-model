@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-import { Carts } from "../models";
-import { Wishlists } from "../models";
-import { Topup } from "../models";
 
-//schema untuk validasi data users
+const { Schema } = mongoose;
+
+// schema untuk validasi data users
 export const usersSchema = new Schema({
   users_id: {
     type: mongoose.ObjectId,

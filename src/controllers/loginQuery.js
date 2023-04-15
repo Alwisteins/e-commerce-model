@@ -1,8 +1,8 @@
-import { Users } from "../models";
+import { Users } from "@/models";
 import { signUpQuery } from "./signUpQuery";
 
-//find document where username/email and password
-const loginQuery = async () => {
+// find document where username/email and password
+export const loginQuery = async () => {
   await Users.find({
     $and: [
       {
@@ -18,4 +18,4 @@ const loginQuery = async () => {
   });
 };
 
-//jika data akun ketemu pada query diatas maka lanjutkan ke logika login akun
+// jika data akun ketemu pada query diatas maka lanjutkan ke logika login akun

@@ -1,8 +1,6 @@
-import mongoose, { Schema } from 'mongoose'
-import { Sellers } from "../models";
-import { Categorys } from "../models";
+import mongoose, { Schema } from "mongoose";
 
-//schema untuk validasi data products
+// schema untuk validasi data products
 export const productSchema = new Schema({
   product_id: {
     type: mongoose.ObjectId,

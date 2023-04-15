@@ -1,22 +1,24 @@
 import mongoose, { Schema } from "mongoose";
-import { Users } from "../models";
 
-//schema untuk validasi data buyers
-export const buyerSchema = new Schema({
-  buyer_id: {
+export const shopSchema = new Schema({
+  shop_id: {
     type: mongoose.ObjectId,
     default: new mongoose.Types.ObjectId(),
   },
-  username: {
+  storeName: {
     type: Schema.Types.ObjectId,
-    ref: "Users",
+    ref: "Products",
   },
-  name: {
+  productName: {
     type: Schema.Types.ObjectId,
-    ref: "Users",
+    ref: "Products",
   },
-  password: {
+  unitPrice: {
     type: Schema.Types.ObjectId,
-    ref: "Users",
+    ref: "Products",
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "Products",
   },
 });

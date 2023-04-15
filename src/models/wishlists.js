@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import { Products } from "../models";
 
 export const wishlistSchema = new Schema({
   wishlist_id: {

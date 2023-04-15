@@ -1,31 +1,8 @@
-//basic konfigurasi express
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-const app = express();
-const PORT = process.env.PORT !== undefined ? process.env.PORT : 3000;
+import app from "./api";
 
-//middleware
-app.use(cors());
-app.use(helmet());
+// sebaiknya kalo untuk backend pake port selain 3000, karna biasanya ini udah dipake sama frontend
+const PORT = process.env.PORT !== null ? process.env.PORT : 88;
 
-//aktivasi server db
-import { init } from "./model/connect";
-init();
-
-//route halaman home
-app.get("/", (req, res) => {
-  res.send(console.log("Terhubung dengan server!"));
-  res.status(200);
-});
-
-//route jika mengakses parameter yang tidak ada
-app.use("/", (req, res) => {
-  res.send("404notfound");
-  res.status(404);
-});
-
-//aktifasi server dan port
 app.listen(PORT, () => {
-  console.log(`Server sedang berjalan di http://localhost:${PORT}`);
+  console.log(`Server is listening at http://localhost:${PORT}`);
 });

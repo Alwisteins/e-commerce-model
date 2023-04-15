@@ -1,6 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import { Carts } from "../models";
-import { Shippings } from "../models";
 
 export const checkoutSchema = new Schema({
   checkout_id: {
