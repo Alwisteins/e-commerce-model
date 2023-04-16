@@ -12,14 +12,6 @@ export const usersSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Products",
   },
-  cart_id: {
-    type: Schema.Types.ObjectId,
-    ref: "Carts",
-  },
-  wishlist_id: {
-    type: Schema.Types.ObjectId,
-    ref: "Wishlists",
-  },
   topup_id: {
     type: Schema.Types.ObjectId,
     ref: "Topup",
@@ -53,16 +45,50 @@ export const usersSchema = new Schema({
     maxLength: 50,
   },
   wishlist: {
-    type: Schema.Types.ObjectId,
-    ref: "Wishlists",
+    type: Object,
+    wishlist_id: {
+      type: mongoose.ObjectId,
+      default: new mongoose.Types.ObjectId(),
+    },
+    productName: {
+      type: String,
+      ref: "Products",
+    },
+    unitPrice: {
+      type: Number,
+      ref: "Products",
+    },
+    category: {
+      type: String,
+      ref: "Products",
+    },
   },
   cart: {
-    type: Schema.Types.ObjectId,
-    ref: "Wishlists",
+    type: Object,
+    cart_id: {
+      type: mongoose.ObjectId,
+      default: new mongoose.Types.ObjectId(),
+    },
+    product_id: {
+      type: Schema.Types.ObjectId,
+      ref: "Products",
+    },
+    quantity: {
+      type: Number,
+      required: true,
+      max: 3,
+    },
+    totalPrice: {
+      type: Number,
+      required: true,
+      max: 9,
+    },
   },
   photoProfile: String,
   saldo: {
     type: Number,
-    ref: "Topup",
+    default: 0,
+    min: 1,
+    max: 15,
   },
 });
