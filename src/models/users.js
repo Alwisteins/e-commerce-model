@@ -12,10 +12,6 @@ export const usersSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Products",
   },
-  topup_id: {
-    type: Schema.Types.ObjectId,
-    ref: "Topup",
-  },
   username: {
     type: String,
     required: true,
